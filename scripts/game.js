@@ -1,5 +1,7 @@
-let choiceContainers=$('.choice-container');
-let choiceTexts=$('.choice-text');
+const choiceContainers=$('.choice-container');
+const choiceTexts=$('.choice-text');
+const progressText=$('#progressText');
+const progressBarFull=$('#progressBarFull');
 
 let questions=[];
 let currentQuestion={};
@@ -9,22 +11,22 @@ let acceptingAnswers=false;
 
 $.ajax({
     method:'GET',
-    url:'https://opentdb.com/api.php?amount=3',
+    url:'https://opentdb.com/api.php?amount=7',
     dataType:"json"
 
 })
 .done(function(response){
-    for(let loadedQuestion of response.results){
-        let formattedQuestion={
+    for(const loadedQuestion of response.results){
+        const formattedQuestion={
             'question':$.parseHTML(loadedQuestion.question)[0].textContent
         };
-        let answerChoices=[];
-        for(let incorrectAnswer of loadedQuestion.incorrect_answers){
-            let parsedIncorrectAnswer=$.parseHTML(incorrectAnswer)[0].textContent;
+        const answerChoices=[];
+        for(const incorrectAnswer of loadedQuestion.incorrect_answers){
+            const parsedIncorrectAnswer=$.parseHTML(incorrectAnswer)[0].textContent;
             answerChoices.push(parsedIncorrectAnswer);
         }
         formattedQuestion.answerIndex=Math.floor(Math.random()*answerChoices.length);
-        let parsedCorrectAnswer=$.parseHTML(loadedQuestion.correct_answer)[0].textContent;
+        const parsedCorrectAnswer=$.parseHTML(loadedQuestion.correct_answer)[0].textContent;
         answerChoices.splice(formattedQuestion.answerIndex,0,parsedCorrectAnswer);
         formattedQuestion.answerChoices=answerChoices;
         questions.push(formattedQuestion);
@@ -35,13 +37,13 @@ $.ajax({
     console.log(err);
 })
 
-for(let choice of choiceTexts){
+for(const choice of choiceTexts){
     $(choice).click(function(event){
         if(!acceptingAnswers) return;
         acceptingAnswers=false;
-        let selectedChoice=event.target;
-        let selectedAnswerIndex=$(event.target).attr("id");
-        let classToApply=currentQuestion.answerIndex==selectedAnswerIndex?"correct":"incorrect";
+        const selectedChoice=event.target;
+        const selectedAnswerIndex=$(event.target).attr("id");
+        const classToApply=currentQuestion.answerIndex==selectedAnswerIndex?"correct":"incorrect";
         $(selectedChoice.parentElement).addClass(classToApply);
         setTimeout(function(){
             $(selectedChoice.parentElement).removeClass(classToApply);
@@ -57,6 +59,8 @@ function getNewQuestion(){
     if(questionCounter>=questions.length){
         return window.location.assign('index.html');
     }
+    progressText.text(`${questionCounter+1}/${questions.length}`);
+    progressBarFull.css({'width':`${((questionCounter+1)/questions.length)*100}%`});
     currentQuestion=questions[questionCounter];
     $('#question').text(currentQuestion.question);
     for(let index=0;index<choiceContainers.length;index++){
@@ -72,3 +76,4 @@ function getNewQuestion(){
     acceptingAnswers=true;
 
 }
+
