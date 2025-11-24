@@ -55,7 +55,7 @@ for(let choice of choiceTexts){
 function getNewQuestion(){
     questionCounter++;
     if(questionCounter>=questions.length){
-        return window.location.assign('menu.html');
+        return window.location.assign('index.html');
     }
     currentQuestion=questions[questionCounter];
     $('#question').text(currentQuestion.question);
