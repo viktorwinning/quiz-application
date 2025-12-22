@@ -16,26 +16,27 @@ saveScoreBtn.click(function(){
         name:username.val(),
 
     };
-    if (highScores.length<maxHighScores || mostRecentScore>highScores[maxHighScores-1].score){
+    if(highScores.length<maxHighScores || mostRecentScore>highScores[maxHighScores-1].score){
         highScores.push(score);
         highScores.sort(function(a,b){
             return b.score-a.score;
         });
         highScores.splice(maxHighScores);
-
     }
     else if(mostRecentScore<highScores[maxHighScores-1].score){
-        alert('Last score wasnt saved as its less than your top 5')
+        alert('Recent score is not saved as it is less than the last high score in top 5');
     }
     else{
         for(let i=0;i<highScores.length-1;i++){
             if(highScores[i].score===mostRecentScore){
                 highScores[i]=score;
-            break;
-        }   
-    }
+                break;
+            }
+
+        }
     }
     console.log(highScores);
     localStorage.setItem('highScores',JSON.stringify(highScores));
     window.location.assign('index.html');
+    
 })

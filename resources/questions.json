@@ -1,0 +1,112 @@
+[
+    
+    {
+        "question":"Costs 4 elixir and targets buildings only.",
+        "answerChoices":["Giant","Hog Rider","Royal hogs","Spirit Empress"],
+        "answerIndex":1
+
+
+    },
+    {
+        "question":"Legendary, costs 7 elixir, and is an air tank.",
+        "answerChoices":["Inferno Dragon","Balloon","Lava Hound","baby Dragon"],
+        "answerIndex":2
+
+
+    },
+    {
+        "question":"Costs 4 elixir, is a spell, and deals damage over time.",
+        "answerChoices":["Fireball","Poison","Arrows","Zap"],
+        "answerIndex":1
+
+
+    },
+    {
+        "question":"Costs 4 elixir, is ranged, and targets air and ground.",
+        "answerChoices":["Musketeer","Wizard","Executioner","Dart Goblin"],
+        "answerIndex":0
+
+
+    },
+    {
+        "question":"Costs 5 elixir and spawns five ground troops.",
+        "answerChoices":["Minion Horde","Skeleton Army","Goblin Gang","Barbarians"],
+        "answerIndex":3
+
+
+    },
+    {
+        "question":"Costs 2 elixir and resets enemy attacks.",
+        "answerChoices":["Snowball","Log","Zap","Rage"],
+        "answerIndex":2
+
+
+    },
+    {
+        "question":"Costs 4 elixir and becomes invisible while moving.",
+        "answerChoices":["Miner","Night Witch","Royal Ghost","Bandit"],
+        "answerIndex":2
+
+
+    },
+    {
+        "question":"Costs 4 elixir and hides when there's no enemy troops nearby",
+        "answerChoices":["Inferno Tower","Tesla","Bomb Tower","Cannon"],
+        "answerIndex":1
+
+
+    },
+    {
+        "question":"Costs 2 elixir and spawns multiple flying units.",
+        "answerChoices":["Minions","Skeleton Dragons","Bats","Mega Minion"],
+        "answerIndex":2
+
+
+    },
+    {
+        "question":"Elixir cost is dependant on its mode, can be used as a groud troop and an Air troop",
+        "answerChoices":["Battle Ram","Spirit Empress","Godlin Machine","Might Miner"],
+        "answerIndex":1
+
+
+    },
+    {
+        "question":"Costs 3 elixir and can be placed anywhere in the arena",
+        "answerChoices":["Fisherman","Ice Wizard","Electro Spirit","Miner"],
+        "answerIndex":3
+
+
+    },
+    {
+        "question":"Costs 5 elixir and deals increasing damage over time.",
+        "answerChoices":["Mortar","Inferno Tower","Bomb Tower","X-Bow"],
+        "answerIndex":1
+
+
+    },
+    {
+        "question":"Costs 1 elixir and chains damage between enemies.",
+        "answerChoices":["Fire Spirit","Heal Spirit","Electro Spirit","Ice Spirit"],
+        "answerIndex":2
+
+
+    },
+    {
+        "question":"Costs 3 elixir and spawns skeletons over time",
+        "answerChoices":["Witch","Graveyard","Tombstone","Skeleton Army"],
+        "answerIndex":2
+
+
+    },
+    {
+        "question":"Costs 2 elixir and pushes enemies back",
+        "answerChoices":["Fireball","Arrows","Snowball","Zap"],
+        "answerIndex":2
+
+
+    }
+    
+    
+    
+
+]

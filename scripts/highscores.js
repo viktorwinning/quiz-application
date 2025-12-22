@@ -1,5 +1,7 @@
 const highScores=JSON.parse(localStorage.getItem("highScores")) || [];
+
 $('#highScoresList').html(formHighScoresList(highScores));
+
 function formHighScoresList(highScores){
     let scoreList="";
     for(let highScore of highScores){
